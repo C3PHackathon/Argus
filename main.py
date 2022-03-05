@@ -27,7 +27,7 @@ async def traffic_cams(lat: float, lon: float, dist: int):
 
 @app.get("/bus-cams")
 async def bus_cams(lat: float, lon: float, event_time: datetime = datetime.now(), radius:int = 50, time_delta: int = 30):
-    transit = client.Transit(api_key="70FVH1tF6VvpB9Igx875", endpoint="https://api.winnipegtransit.com/v3/")
+    transit = client.Transit(api_key="", endpoint="https://api.winnipegtransit.com/v3/")
     r = transit.get_bus_records(
         latitude=lat, longitude=lon, time_stamp=event_time, radius=radius, time_window_delta=timedelta(minutes=time_delta)
         )
