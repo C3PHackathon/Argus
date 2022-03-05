@@ -6,7 +6,7 @@ from datetime import datetime, timedelta
 
 
 app = FastAPI()
-
+traffic_cams = pd.read_csv("Traffic_cameras.csv")
 
 @app.get("/")
 async def root():
@@ -15,7 +15,6 @@ async def root():
 
 @app.get("/traffic-cams")
 async def traffic_cams(lat: float, lon: float, dist: int):
-    traffic_cams = pd.read_csv("Traffic_cameras.csv")
     ret = list()
     for _, row in traffic_cams.iterrows():
         cam_location = row.Latitude, row.Longitude
