@@ -1,0 +1,5 @@
+numpy
+pandas
+requests
+fastapi[all]
+geopy
